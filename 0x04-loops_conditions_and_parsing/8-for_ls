@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 #smartly lists the content of the current directory
-
-#ls > dummy
-#cut --complement -d "-" -f 1 dummy
-
-#for i in $(ls)
 for i in *
 do
 	echo "$i" | cut --complement -d "-" -f 1
