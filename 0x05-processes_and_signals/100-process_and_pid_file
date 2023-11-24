@@ -12,8 +12,8 @@ mv myscript.pid /var/run/
 
 trap "echo 'I hate the kill command'" SIGTERM
 trap "echo 'Y U no love me?!'" SIGINT
-trap "rm /var/run/myscript.pid ; pkill -f '100-process_and_pid_file'" SIGTERM
-trap "rm /var/run/myscript.pid ; pkill -f '100-process_and_pid_file'" SIGQUIT
+trap "rm /var/run/myscript.pid ; pkill -9 -f '100-process_and_pid_file'" SIGTERM
+trap "rm /var/run/myscript.pid ; pkill -9 -f '100-process_and_pid_file'" SIGQUIT
 
 while true
 do
