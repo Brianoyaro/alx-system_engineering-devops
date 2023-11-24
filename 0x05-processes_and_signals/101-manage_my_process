@@ -1,4 +1,4 @@
-#!/sur/bin/env bash
+#!/usr/bin/env bash
 #manages the file 'manage_my_process'
 if [ -z "$1" ];then
 echo "Usage: manage_my_process {start|stop|restart}"
