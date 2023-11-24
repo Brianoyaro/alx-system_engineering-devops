@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034  # Unused variables left for readability
 file="/etc/passwd"
+#while IFS=: read -r f1 _ f3 _ _ f6  can be used where line two which disables SC2034 will be removed
 while IFS=: read -r f1 f2 f3 f4 f5 f6 f7
 do
 	printf '%s:%s:%s\n' "$f1" "$f3" "$f6"
