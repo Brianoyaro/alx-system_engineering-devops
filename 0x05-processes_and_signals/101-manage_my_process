@@ -1,0 +1,22 @@
+#!/sur/bin/env bash
+#manages the file 'manage_my_process'
+if [ -z "$1" ];then
+echo "Usage: manage_my_process {start|stop|restart}"
+fi
+if [ "$2" == "start" ];then
+/etc/init.d/manage_my_process start
+echo $$ > /var/run/my_process.pid
+echo "manage_my_process started"
+fi
+if [ "$2" == "stop" ];then
+/etc/init.d/manage_my_process stop
+rm /var/run/my_process.pid
+echo "manage_my_process stopped"
+fi
+if [ "$2" == "restart" ];then
+/etc/init.d/manage_my_process stop
+rm /var/run/my_process.pid
+/etc/init.d/manage_my_process start
+echo $$ > /var/run/my_process.pid
+echo "manage_my_process restarted"
+fi
