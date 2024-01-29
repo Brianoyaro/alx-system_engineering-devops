@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# install hAproxy and provides redundancy over two web servers
+apt-get -y update
+apt-get install haproxy=2.8.\*
+cat >> /etc/haproxy/haproxy.cfg <<EOF
+backend web-backend
+	balance roundrobin
+	serve 308097-web-01 100.25.21.172:80 check
+	serve 308097-web-02 52.87.232.176:80 check
+
+frontend http
+	bind *:80
+	mode http
+	default_backend web-backend
+EOF
+service haproxy restart
