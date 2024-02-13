@@ -5,7 +5,7 @@ sudo sed -i 's/#user www-data/user nginx/' /etc/nginx/nginx.conf
 #change ownership of the /var/log/nginx to be owned by same user
 chown nginx:nginx /etc/nginx/nginx.conf
 #Update the /etc/nginx/nginx.conf file to give it read permission (644).
-chmod 0644 /etc/nginx/nginx.conf
+chmod 700 /etc/nginx/nginx.conf
 #listening should be in 8080
 sed -i 's/80 default_server/8080 default_server/' /etc/nginx/sites-available/default
 pkill -f apache2
