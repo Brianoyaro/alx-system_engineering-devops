@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """records all tasks for all employees"""
-import requests
 import json
+import requests
 
 
 if __name__ == "__main__":
