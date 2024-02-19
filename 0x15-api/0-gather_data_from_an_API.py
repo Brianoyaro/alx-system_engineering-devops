@@ -20,6 +20,6 @@ if __name__ == "__main__":
         if item.get('completed'):
             count += 1
             actual_done.append(item.get('title'))
-    print("Employee {} is done with tasks {}/{}".format(name, count, total_tasks))
+    print("Employee {} is done with tasks ({}/{}):".format(name, count, total_tasks))
     for item in actual_done:
         print("\t{}".format(item))
