@@ -34,6 +34,6 @@ if __name__ == "__main__":
         dict_["completed"] = item.get("completed")
         dict_["username"] = username[0].get("username")
         data_.append(dict_)
-    line = {value: data}
+    line = {value: data_}
     with open(filename, "w") as f:
         json.dump(line, f)
