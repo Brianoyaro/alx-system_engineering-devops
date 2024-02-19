@@ -15,9 +15,12 @@ if __name__ == "__main__":
         user_id = user.get("id")
         user_name = user.get("username")
         value = []
+        json_entry = {}
         for i in response:
             if user_id == i["userId"]:
-                json_entry = {'username': user['username'], 'completed': i['completed'], 'task': i['title']}
+                json_entry['username'] = user['username']
+                json_entry['completed'] = i['completed']
+                json_entry['task'] = i['title']
                 value.append(json_entry)
         final_dict[user_id] = value
     with open(filename, "w") as f:
